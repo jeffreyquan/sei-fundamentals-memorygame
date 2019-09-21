@@ -22,10 +22,17 @@ const cards = [
 ];
 
 var cardsInPlay = [];
+var score = 0;
+
+function updateScore() {
+	document.getElementById('score').innerHTML = "Score: " + score;
+}
 
 function checkForMatch() {
 	if (cardsInPlay[0] === cardsInPlay[1]) {
 				alert("You found a match!");
+				score = score + 1;
+				updateScore();
 			} else {
 				alert("Sorry, try again.");
 			}
@@ -70,6 +77,7 @@ function createBoard() {
 		cardElement.addEventListener('click', flipCard);
 		document.getElementById('game-board').appendChild(cardElement);	
 	}
+	document.getElementById('score').innerHTML = "Score: " + score;
 }
 
 createBoard();

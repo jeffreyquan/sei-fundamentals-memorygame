@@ -100,3 +100,9 @@ footer {
 	color: #F15B31;
 	font-weight: 700;
 }
+
+#score {
+	ont-family: "Droid Serif";
+	line-height: 26px;
+	font-size: 18px;
+}
