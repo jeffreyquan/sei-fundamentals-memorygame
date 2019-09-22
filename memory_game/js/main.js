@@ -28,13 +28,19 @@ function updateScore() {
 	document.getElementById('score').innerHTML = "Score: " + score;
 }
 
+function showMessage(msg) {
+	document.getElementById("message").innerHTML = msg;
+}
+
 function checkForMatch() {
 	if (cardsInPlay[0] === cardsInPlay[1]) {
-				alert("You found a match!");
+				showMessage("You've found a match!");
 				score = score + 1;
 				updateScore();
+				setTimeout(resetBoard, 2500);
 			} else {
-				alert("Sorry, try again.");
+				showMessage("Sorry, try again.");
+				setTimeout(resetBoard, 2500);
 			}
 }
 
@@ -50,7 +56,6 @@ function flipCard() {
 	}
 }
 
-
 function clearCardsInPlay() {
 	cardsInPlay = [];
 }
@@ -61,6 +66,7 @@ function resetBoard() {
 	while (images.firstChild) {
 		images.removeChild(images.firstChild);
 	}
+	showMessage("");
 	createBoard();
 }
 
